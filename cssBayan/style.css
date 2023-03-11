@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1 {
+  margin: 0;
+}
+
+body {
+  font-family: FreeMono, monospace;
+  background-color: #FFC373;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.accordion {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.accordion__title {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.memes__container:hover .meme__title{
+  color: #000000;
+} 
+
+.memes__container:hover span{
+  display: inline-block;
+} 
+
+.memes__container:hover,
+.meme__container:hover,
+label:hover
+{
+  cursor: pointer;
+}
+
+.meme__container {
+  margin-top: 15px;
+}
+
+.meme__container:hover span{
+  transition: 0.5s;
+  transform: rotate(180deg);
+}
+
+.meme__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;  
+  padding: 5px 20px;
+
+  color: #507FA4;
+
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+span {
+  display: none;
+  width: 0.7em;
+
+  transition: 0.5s;
+
+  content: url("assets/svg/arrow-down.svg");
+}
+
+.meme__img-container {
+  width: 100%;
+}
+
+.meme img {
+  display: block;
+  margin: 10px auto;
+  width: 0%;
+
+  transition: 0.5s;
+}
+
+img:hover {
+  opacity: 0.8;
+}
+
+img:active {
+  opacity: 0;
+}
+
+#meme1,
+#meme2,
+#meme3,
+#meme4 {
+  display: none;
+}
+
+@media (max-width: 1920px) {
+  .accordion__title {
+    font-size: 42px;
+  }
+  .meme__title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .meme__container:hover img{
+    transition: 0.5s;
+    width: 40%;
+  }
+  input:checked + .meme img {
+    width: 40%;
+    border: 2px solid #507FA4;
+  }
+}
+
+@media (max-width: 820px) {
+  .accordion__title {
+    font-size: 38px;
+  }
+  .meme__title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .meme__container:hover img{
+    transition: 0.5s;
+    width: 60%;
+  }
+  input:checked + .meme img {
+    width: 60%;
+  }
+}
+
+@media (max-width: 320px) {
+  .accordion__title {
+    font-size: 32px;
+  }
+  .meme__title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .meme__container:hover img{
+    transition: 0.5s;
+    width: 100%;
+  }
+  input:checked + .meme img {
+    width: 100%;
+  }
+}
