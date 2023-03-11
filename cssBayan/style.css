@@ -116,6 +116,10 @@ img:active {
     width: 40%;
     border: 2px solid #507FA4;
   }
+
+  input:checked + .meme .meme__title span{
+    transform: rotate(180deg);
+  }
 }
 
 @media (max-width: 820px) {
