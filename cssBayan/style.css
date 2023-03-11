@@ -89,9 +89,18 @@ img:hover {
   opacity: 0.8;
 }
 
-img:active {
+input:active + .meme img {
   opacity: 0;
 }
+
+input:active + .meme .meme__title {
+  opacity: 0.5;
+}
+
+input:active + .meme .meme__title span {
+  filter: opacity(50%);
+}
+
 
 #meme1,
 #meme2,
