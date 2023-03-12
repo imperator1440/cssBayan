@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1 {
+  margin: 0;
+}
+
+body {
+  font-family: FreeMono, monospace;
+  background-color: #FFC373;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.accordion {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.accordion__title {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.meme__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;  
+  padding: 0.3rem 1.5rem;
+
+  color: #507FA4;
+
+  border-top: 0.05rem solid black;
+  border-bottom: 0.05rem solid black;
+}
+
+span {
+  display: none;
+  width: 0.7em;
+
+  transition: 0.5s;
+
+  content: url("assets/svg/arrow-down.svg");
+}
+
+.meme__img-container {
+  width: 100%;
+}
+
+.meme img {
+  display: block;
+  margin: 1rem auto;
+  width: 0%;
+
+  transition: 0.5s;
+}
+
+input:active + .meme img {
+  opacity: 0.2;
+}
+
+input:active + .meme .meme__title {
+  transition: 0.2s;
+  opacity: 0.2;
+}
+
+input:active + .meme .meme__title span {
+  filter: opacity(50%);
+}
+
+input:checked + .meme .meme__title{
+  color: black;
+}
+
+#meme1,
+#meme2,
+#meme3,
+#meme4 {
+  display: none;
+}
+
+@media (max-width: 2048px) {
+  .accordion__title {
+    font-size: 2.5em;
+  }
+  .meme__title {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  input:checked + .meme img {
+    width: 50%;
+    border: 0.15rem solid #507FA4;
+  }
+
+  input:checked + .meme .meme__title span{
+    transform: rotate(180deg);
+    filter: contrast(white);
+  }
+}
+
+@media (max-width: 960px) {
+  .accordion__title {
+    font-size: 2.2em;
+  }
+  .meme__title {
+    font-size: 1.8em;
+    font-weight: 600;
+  }
+  input:checked + .meme img {
+    width: 80%;
+  }
+  .meme__title {
+    color: #507FA4;
+  }
+  input:checked + .meme .meme__title {
+    color: black;
+  }
+  span {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 450px) {
+  .accordion__title {
+    font-size: 2.3em;
+  }
+  .meme__title {
+    font-size: 2em;
+    font-weight: 600;
+  }
+  input:checked + .meme img {
+    width: 100%;
+  }
+  .meme__title {
+    color: #507FA4;
+  }
+  input:checked + .meme .meme__title {
+    color: black;
+  }
+  span {
+    display: inline-block;
+  }
+}
+
+@media (hover: hover) {
+    .meme__container:hover img{
+    transition: 0.5s;
+    width: 40%;
+  }
+  img:hover {
+    opacity: 0.8;
+  }
+  .meme__container:hover span{
+    transition: 0.5s;
+    transform: rotate(180deg);
+  }
+  .memes__container:hover .meme__title{
+    color: #000000;
+  } 
+  
+  .memes__container:hover span{
+    display: inline-block;
+  } 
+  
+  .memes__container:hover,
+  .meme__container:hover,
+  label:hover
+  {
+    cursor: pointer;
+  }
+}
