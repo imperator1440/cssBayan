@@ -78,6 +78,9 @@ input:active + .meme .meme__title span {
   filter: opacity(50%);
 }
 
+input:checked + .meme .meme__title{
+  color: black;
+}
 
 #meme1,
 #meme2,
