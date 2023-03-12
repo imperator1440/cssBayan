@@ -67,7 +67,7 @@ input:active + .meme img {
 }
 
 input:active + .meme .meme__title {
-  transition: 0.3s;
+  transition: 0.2s;
   opacity: 0.2;
 }
 
